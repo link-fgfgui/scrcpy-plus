@@ -29,7 +29,7 @@ fn execute(command: &str, args: Vec<&str>) -> String {
 
 #[cfg(windows)]
 pub fn scrcpy(args: Vec<&str>) -> String {
-    return execute("resources/scrcpy/scrcpy.exe", args);
+    return execute("scrcpy/scrcpy.exe", args);
 }
 
 #[cfg(not(windows))]
@@ -39,7 +39,7 @@ pub fn scrcpy(args: Vec<&str>) -> String {
 
 #[cfg(windows)]
 pub fn adb(args: Vec<&str>) -> String {
-    return execute("resources/scrcpy/adb.exe", args);
+    return execute("scrcpy/adb.exe", args);
 }
 
 #[cfg(not(windows))]

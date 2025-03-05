@@ -20,6 +20,7 @@
                 <select class="select w-full" @change="set_language($event); setLocale($event.target.value)">
                     <option value="en" :selected="locale == 'en'">English</option>
                     <option value="it" :selected="locale == 'it'">Italiano</option>
+                    <option value="zh-CN" :selected="locale == 'zh-CN'">简体中文</option>
                 </select>
                 <p class="opacity-50">
                     <span class="mr-2">{{ $t('translation_credits') }}</span>

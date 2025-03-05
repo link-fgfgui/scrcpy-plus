@@ -1,6 +1,7 @@
 use serde_json::{ json, Value };
 mod system_command;
 use system_command::{ scrcpy, adb };
+use tauri::{WindowEvent,Window};
 
 #[tauri::command]
 fn environment() -> Value {
@@ -40,7 +41,12 @@ fn run_scrcpy(args: Vec<&str>) {
 // #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
   tauri::Builder::default()
+    .on_window_event(|_window: &Window, event: &WindowEvent| {
+      if let WindowEvent::CloseRequested { .. } = event {
+          adb(vec!["kill-server"]);
+      }
+    })
     .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment])
     .run(tauri::generate_context!())
-    .expect("error while running tauri application");
+    .expect("error while running tauri application")
 }

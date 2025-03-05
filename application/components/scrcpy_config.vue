@@ -79,6 +79,18 @@ export default {
                 { type: "boolean", arg: "--no-key-repeat"           },
                 { type: "boolean", arg: "--show-touches"            },
                 { type: "boolean", arg: "--lock-video-orientation"  },
+                { type: "boolean", arg: "--audio-dup"  },
+                { type: "boolean", arg: "-b 40M"  },
+                { type: "boolean", arg: "-b 30M"  },
+                { type: "boolean", arg: "-b 20M"  },
+                { type: "boolean", arg: "-b 10M"  },
+                { type: "boolean", arg: "-b 6M"  },
+                { type: "boolean", arg: "-b 4M"  },
+                { type: "boolean", arg: "-b 2M"  },
+                { type: "boolean", arg: "--max-fps=60"  },
+                { type: "boolean", arg: "--max-fps=30"  },
+                { type: "boolean", arg: "--max-fps=120"  },
+                { type: "boolean", arg: "--max-fps=24"  },
             ]
         }
     },
